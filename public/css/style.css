@@ -1,0 +1,33 @@
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;  
+}
+.container {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+}
+.flex h6 {
+    margin: auto 10px;
+}
+
+.card {
+    width: 300px;
+    height: 250px;
+}
+.public-header {
+    margin-left: 50px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}

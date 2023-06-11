@@ -1,0 +1,42 @@
+<div class="container">
+    <h6>Dashboard</h6>
+    <h6><a href="/story">Add new Story</a></h6>
+    <div class="flex">
+        <h6><a href="/allStories">Private Stories</a></h6>
+        <h6>Welcom <%= user.name%></h6>
+
+        <h6><a href="/logout">Logout</a></h6>
+    </div>
+</div>
+
+<h4 class="public-header">This is all public stories</h4>
+<div class="container card-container">
+
+    <% if(typeof stories !== 'undefined') { %>
+        <% stories.forEach(story => { %>           
+            <div class="row">
+                <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-image">
+                        <%- editIcon(story.user, user, story._id )%>
+                    </div>
+                    <div class="card-content white-text">
+                        <span class="card-title"><%= story.title%></span>
+                        <br>
+                        <p><%= story.body %></p>
+                        <br>
+                        <p><%= story.status %></p>
+                    </div>
+                    <div class="card-action">
+                    <a href="/show">More</a>
+                    <a href="">Owner:  <%= story.user.name%></a>
+                    <p><%= formatDate(story.createdAt, 'MMMM Do YYYY, h:mm:ss a')%></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
+    
+</div>
+
